@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NonNls;
+
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -34,6 +36,16 @@ public class Main {
         System.out.println(messages.getString("greetings"));
         System.out.println(messages.getString("inquiry"));
         System.out.println(messages.getString("farewell"));
+
+        System.out.println(messages.getString("alert.title"));
+
+        // Ignoring Hard-Coded String Literals
+
+        @NonNls String literal1 = "Stay literal...1";   // and don't warn (with @NonNls)
+        System.out.println("\n" + literal1);
+
+        String literal2 = "Stay literal...2";   // and warn (no @NonNls)
+        System.out.println("\n" + literal2);
 
     }
 }
